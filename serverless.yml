@@ -8,9 +8,11 @@ plugins:
 provider:
   name: aws
   runtime: nodejs10.x
+  stage: dev
+  region: ap-northeast-1
 
 functions:
   hello:
     handler: handler.hello
     events:
-      - schedule: cron(0/1 * * * ? *)
+      - schedule: cron(* 1 * * ? *)
